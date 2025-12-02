@@ -1,0 +1,32 @@
+.card {
+  width: 170px;
+  height: 230px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  height: 75%;
+  object-fit: cover;
+}
+
+.content {
+  height: 25%;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chip {
+  font-size: 12px;
+  height: 24px;
+  width: fit-content;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+}

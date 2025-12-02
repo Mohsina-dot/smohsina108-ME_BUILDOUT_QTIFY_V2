@@ -1,0 +1,22 @@
+:root {
+  --qtify-green: #00FF66;
+  --qtify-black: #000000;
+}
+
+.feedback {
+  background-color: var(--qtify-black);
+  color: var(--qtify-green);
+  font-family: "Poppins", sans-serif;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  line-height: 1;
+  font-size:14px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.feedback:hover {
+  opacity: 0.9;
+}

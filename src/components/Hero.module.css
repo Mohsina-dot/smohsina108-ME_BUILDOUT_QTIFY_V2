@@ -1,0 +1,33 @@
+.hero {
+  background-color: var(--color-black);
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  padding: 0 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  color: white;
+  justify-content: center;
+}
+
+.imageBlock {
+  flex: 0;
+  display: flex;
+  align-items: center;
+}
+
+.imageBlock img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
