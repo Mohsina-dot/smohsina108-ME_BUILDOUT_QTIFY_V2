@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.app {
+  margin-top: 80px;
+  width: 100%
+}

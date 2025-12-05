@@ -1,28 +1,19 @@
 .search {
-  padding: 14px 20px;
+  width: 100%;
   height: 100%;
+  padding: 0 48px 0 16px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #121212;
+  background-color: #FFFFFF;
+  border: 1px solid #121212;
   border-radius: 8px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border: 1px solid var(--color-black);
-  max-width: 32rem;
-  min-width: 24rem;
 }
 
 .wrapper {
   display: flex;
   align-items: stretch;
-  height: 48px;
-}
-
-.searchButton {
-  border-radius: 0px 8px 8px 0px;
-  padding: 14px 20px;
-  height: 100%;
-  border: 1px solid var(--color-black);
-  border-left: none;
-  cursor: pointer;
-  height: 100%;
+  justify-content: center;
 }
 
 .listElement {
@@ -37,4 +28,27 @@
 
 .albumArtists {
   font-size: 12px;
+}
+
+.search::placeholder {
+  color: var(--color-white);
+  opacity: 0.6;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 568px;
+  height: 48px;
+}
+
+.icon {
+  position: absolute;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
 }
