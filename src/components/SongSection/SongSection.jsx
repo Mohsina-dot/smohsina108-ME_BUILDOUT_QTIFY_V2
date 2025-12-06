@@ -12,8 +12,8 @@ function SongSection() {
     axios.get("https://qtify-backend.labs.crio.do/songs")
       .then(res => setSongs(res.data));
     axios.get("https://qtify-backend.labs.crio.do/genres")
-      .then(res => setGenres(res.data));
-  }, []);
+    .then(res => setGenres(res.data.data));
+}, []);
 
   const handleChange = (event, newValue) => setSelectedGenre(newValue);
 

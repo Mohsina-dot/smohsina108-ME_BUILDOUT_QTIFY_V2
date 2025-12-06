@@ -17,7 +17,9 @@ function App() {
         title="New Albums"
         apiEndpoint="https://qtify-backend.labs.crio.do/albums/new"
       />
-      <SongSection /> {/* Songs section with Tabs */}
+      <SongSection 
+      title="Songs"
+      apiEndpoint="https://qtify-backend.labs.crio.do/songs."/>
     </div>
   );
 }
