@@ -5,8 +5,8 @@ import Carousel from "../Carousel/Carousel";
 import styles from "./Section.module.css";
 
 function Section({ title, apiEndpoint }) {
+  const [showAll, setShowAll] = useState(false);
   const [albums, setAlbums] = useState([]);
-  const [isCollapsed, setIsCollapsed] = useState(false);
 
   useEffect(() => {
     axios
@@ -15,24 +15,20 @@ function Section({ title, apiEndpoint }) {
       .catch((err) => console.error("Failed to fetch albums", err));
   }, [apiEndpoint]);
 
-  const handleToggle = () => {
-    setIsCollapsed((prev) => !prev);
-  };
+  const handleToggle = () => setShowAll((prev) => !prev);
 
   return (
     <div className={styles.section}>
       <div className={styles.header}>
         <h2>{title}</h2>
         <button className={styles.collapse} onClick={handleToggle}>
-          {isCollapsed ? "Show All" : "Collapse"}
+          {showAll ? "Collapse" : "Show All"}
         </button>
       </div>
 
       {albums.length === 0 ? (
         <p>Loading albums...</p>
-      ) : isCollapsed ? (
-        <Carousel data={albums} />
-      ) : (
+      ) : showAll ? (
         <div className={styles.grid}>
           {albums.map((album) => (
             <AlbumCard
@@ -40,9 +36,12 @@ function Section({ title, apiEndpoint }) {
               image={album.image}
               title={album.title}
               follows={album.follows}
+              likes={album.likes}
             />
           ))}
         </div>
+      ) : (
+        <Carousel data={albums} />
       )}
     </div>
   );
