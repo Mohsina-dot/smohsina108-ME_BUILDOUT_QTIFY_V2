@@ -2,12 +2,11 @@ import React from "react";
 import leftArrow from "../../assets/LeftNav.svg";
 import styles from "./Nav.module.css";
 
-function LeftNav({ onClick }) {
+function LeftNav() {
   return (
-    <button className={`${styles.navButton} ${styles.left}`} onClick={onClick} aria-label="Previous">
-      <img src ={leftArrow} alt="Previous"/>
+    <button className={`${styles.navButton} ${styles.left}`} aria-label="Previous">
+      <img src={leftArrow} alt="" />
     </button>
   );
 }
-
 export default LeftNav;
