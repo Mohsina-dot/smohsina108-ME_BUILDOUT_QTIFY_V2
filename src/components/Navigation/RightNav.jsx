@@ -4,7 +4,10 @@ import styles from "./Nav.module.css";
 
 function RightNav() {
   return (
-    <button className={`${styles.navButton} ${styles.right}`} aria-label="Next">
+    <button
+      className={`${styles.navButton} slider-next-btn`}
+      aria-label="Next"
+    >
       <img src={rightArrow} alt="Next" />
     </button>
   );

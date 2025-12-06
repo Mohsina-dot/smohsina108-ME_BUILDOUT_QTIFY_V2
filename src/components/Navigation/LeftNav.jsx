@@ -4,7 +4,10 @@ import styles from "./Nav.module.css";
 
 function LeftNav() {
   return (
-    <button className={`${styles.navButton} ${styles.left}`} aria-label="Previous">
+    <button
+      className={`${styles.navButton} slider-prev-btn`}
+      aria-label="Previous"
+    >
       <img src={leftArrow} alt="Previous" />
     </button>
   );

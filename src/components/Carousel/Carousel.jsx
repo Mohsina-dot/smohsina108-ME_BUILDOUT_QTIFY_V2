@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+
 import LeftNav from "../Navigation/LeftNav";
 import RightNav from "../Navigation/RightNav";
 import AlbumCard from "../Card/Card";
@@ -13,8 +14,8 @@ function Carousel({ data, renderItem, className }) {
       <Swiper
         modules={[Navigation]}
         navigation={{
-          prevEl: ".custom-prev",
-          nextEl: ".custom-next",
+          prevEl: ".slider-prev-btn",
+          nextEl: ".slider-next-btn",
         }}
         spaceBetween={20}
         breakpoints={{
@@ -25,7 +26,9 @@ function Carousel({ data, renderItem, className }) {
       >
         {data.map((item, idx) => (
           <SwiperSlide key={item.id ?? idx}>
-            {renderItem ? renderItem(item) : (
+            {renderItem ? (
+              renderItem(item)
+            ) : (
               <AlbumCard
                 image={item.image}
                 title={item.title}
@@ -35,10 +38,11 @@ function Carousel({ data, renderItem, className }) {
           </SwiperSlide>
         ))}
 
-        <div className="custom-prev">
+        <div className="custom-prev slider-prev-btn">
           <LeftNav />
         </div>
-        <div className="custom-next">
+
+        <div className="custom-next slider-next-btn">
           <RightNav />
         </div>
       </Swiper>
