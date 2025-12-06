@@ -3,6 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import LeftNav from "../Navigation/LeftNav";
+import RightNav from "../Navigation/RightNav";
+import AlbumCard from "../Card/Card";
 
 function Carousel({ data, renderItem, className }) {
   return (
@@ -21,7 +24,15 @@ function Carousel({ data, renderItem, className }) {
         }}
       >
         {data.map((item, idx) => (
-          <SwiperSlide key={item.id ?? idx}>{renderItem(item)}</SwiperSlide>
+          <SwiperSlide key={item.id ?? idx}>
+            {renderItem ? renderItem(item) : (
+              <AlbumCard
+                image={item.image}
+                title={item.title}
+                follows={item.follows}
+              />
+            )}
+          </SwiperSlide>
         ))}
 
         <div className="custom-prev">

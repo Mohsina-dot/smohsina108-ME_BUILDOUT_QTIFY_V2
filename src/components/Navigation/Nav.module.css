@@ -19,5 +19,6 @@
   transform: translateY(-50%);
   z-index: 10;
 }
+
 .custom-prev { left: 8px; }
 .custom-next { right: 8px; }

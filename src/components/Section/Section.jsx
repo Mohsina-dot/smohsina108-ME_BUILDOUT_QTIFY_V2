@@ -4,17 +4,20 @@ import AlbumCard from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
 import styles from "./Section.module.css";
 
-function Section({ title, apiEndpoint, isSongs = false, showToggle = true }) {
+function Section({ title, apiEndpoint, items: externalItems, isSongs = false, showToggle = true }) {
   const [showAll, setShowAll] = useState(false);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(apiEndpoint)
-      .then((res) => setItems(res.data))
-      .catch((err) => console.error("Failed to fetch data", err));
-  }, [apiEndpoint]);
+    if (!externalItems && apiEndpoint) {
+      axios
+        .get(apiEndpoint)
+        .then((res) => setItems(res.data))
+        .catch((err) => console.error("Failed to fetch data", err));
+    }
+  }, [apiEndpoint, externalItems]);
 
+  const data = externalItems || items;
   const handleToggle = () => setShowAll((prev) => !prev);
 
   return (
@@ -28,11 +31,11 @@ function Section({ title, apiEndpoint, isSongs = false, showToggle = true }) {
         )}
       </div>
 
-      {items.length === 0 ? (
+      {data.length === 0 ? (
         <p>Loading...</p>
       ) : showAll && showToggle ? (
         <div className={styles.grid}>
-          {items.map((item) => (
+          {data.map((item) => (
             <AlbumCard
               key={item.id}
               image={item.image}
@@ -44,7 +47,7 @@ function Section({ title, apiEndpoint, isSongs = false, showToggle = true }) {
         </div>
       ) : (
         <Carousel
-          data={items}
+          data={data}
           renderItem={(item) => (
             <AlbumCard
               image={item.image}
