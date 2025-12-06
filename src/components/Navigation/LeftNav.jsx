@@ -8,7 +8,7 @@ function LeftNav() {
       className={`${styles.navButton} slider-prev-btn`}
       aria-label="Previous"
     >
-      <img src={leftArrow} alt="Previous" />
+      <img src={leftArrow} alt="Previous" className="nav-icon" />
     </button>
   );
 }
