@@ -32,11 +32,11 @@ function Carousel({ data }) {
         </SwiperSlide>
       ))}
       <div className="custom-prev">
-      <LeftNav />
-      </div>
-      <div className="custom-next">
-      <RightNav />
-      </div>
+        <LeftNav />
+        </div>
+        <div className="custom-next">
+        <RightNav />
+        </div>
     </Swiper>
   );
 }
